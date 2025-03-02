@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Cессия 5</string>
+    <string name="news">Новости</string>
+    <string name="events">События</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
