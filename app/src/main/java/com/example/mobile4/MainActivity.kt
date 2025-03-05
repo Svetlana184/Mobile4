@@ -21,5 +21,7 @@ class MainActivity : AppCompatActivity() {
                 1->tab.text=resources.getString(R.string.events)
             }
         }.attach()
+        val api = RetrofitHelper.getInstance().create(NewEventsApi::class.java)
+
     }
 }
