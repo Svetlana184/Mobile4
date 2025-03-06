@@ -7,6 +7,4 @@ interface NewEventsApi
 {
     @GET("/news")
     suspend fun getNews() : List<News>
-    @GET("/events")
-    suspend fun getEvents() : List<Events>
 }
