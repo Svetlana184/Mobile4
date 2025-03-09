@@ -6,8 +6,8 @@ import retrofit2.http.GET
 
 interface NewEventsApi
 {
-    @GET("events")
-    fun getEvents() : Call<ArrayList<Events>>
+    @GET("search?country=Kazakhstan")
+    fun getUnis() : Call<ArrayList<Country>>
     @GET("news")
     suspend fun getNews() : List<News>
 }

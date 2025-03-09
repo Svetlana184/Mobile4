@@ -12,18 +12,18 @@ class EventsAdapter: RecyclerView.Adapter<EventsAdapter.TodoViewHolder>() {
 
     inner class TodoViewHolder(val binding: ItemEventsBinding): RecyclerView.ViewHolder(binding.root)
 
-    private val diffCallback = object : DiffUtil.ItemCallback<Events>() {
-        override fun areItemsTheSame(oldItem: Events, newItem: Events): Boolean {
-            return oldItem.Title == newItem.Title
+    private val diffCallback = object : DiffUtil.ItemCallback<Country>() {
+        override fun areItemsTheSame(oldItem: Country, newItem: Country): Boolean {
+            return oldItem.name == newItem.name
         }
 
-        override fun areContentsTheSame(oldItem: Events, newItem: Events): Boolean {
+        override fun areContentsTheSame(oldItem: Country, newItem: Country): Boolean {
             return oldItem == newItem
         }
     }
 
     private val differ = AsyncListDiffer(this, diffCallback)
-    var events: List<Events>
+    var events: List<Country>
         get() = differ.currentList
         set(value) {differ.submitList(value)}
 
@@ -40,7 +40,11 @@ class EventsAdapter: RecyclerView.Adapter<EventsAdapter.TodoViewHolder>() {
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         holder.binding.apply {
             val our_event = events[position]
-            EventTitle.text = our_event.Title
+
+            EventTitle.text = our_event.name
+            textView2.text = our_event.web_pages[0]
+            textView3.text = our_event.country
+            textView4.text = our_event.alpha_two_code
         }
     }
 }
