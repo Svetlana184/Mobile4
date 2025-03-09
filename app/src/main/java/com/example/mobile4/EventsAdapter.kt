@@ -40,7 +40,7 @@ class EventsAdapter: RecyclerView.Adapter<EventsAdapter.TodoViewHolder>() {
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         holder.binding.apply {
             val our_event = events[position]
-            tvTitle.text = our_event.Title
+            EventTitle.text = our_event.Title
         }
     }
 }
