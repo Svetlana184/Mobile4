@@ -4,11 +4,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
-    val api: EventsApi by lazy{
+    val api: NewEventsApi by lazy{
         Retrofit.Builder()
-            .baseUrl("https://jsonplaceholder.typicode.com")
+            .baseUrl(RetrofitHelper.baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(EventsApi::class.java)
+            .create(NewEventsApi::class.java)
     }
 }
